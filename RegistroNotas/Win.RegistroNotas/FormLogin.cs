@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Win.RegistroNotas.BL.RegistroNotas;
-using static Win.RegistroNotas.BL.RegistroNotas.SeguridadBL;
+using BL.Registro;
+using static BL.Registro.SeguridadBL;
 
 namespace Win.RegistroNotas
 {
@@ -16,11 +16,11 @@ namespace Win.RegistroNotas
     {
         SeguridadBL _seguridadBL;
 
-        public Usuario UsuarioAutenticado { get; set; }
-
         public FormLogin()
         {
             InitializeComponent();
+
+            _seguridadBL = new SeguridadBL();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,10 +35,8 @@ namespace Win.RegistroNotas
 
             var usuarioAutenticar = _seguridadBL.Autenticar(nombre, contrasena);
 
-            if(usuarioAutenticar != null)
+            if(usuarioAutenticar == true)
             {
-                UsuarioAutenticado = usuarioAutenticar;
-
                 this.Close();
             }else
             {
@@ -49,9 +47,5 @@ namespace Win.RegistroNotas
             }
         }
 
-        public void CargarDatos(SeguridadBL seguridadBL)
-        {
-            _seguridadBL = seguridadBL;
-        }
     }
 }

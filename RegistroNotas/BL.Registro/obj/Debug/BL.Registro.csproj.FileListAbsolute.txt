@@ -1,0 +1,5 @@
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\BL.Registro\bin\Debug\BL.Registro.dll
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\BL.Registro\bin\Debug\BL.Registro.pdb
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\BL.Registro\obj\Debug\BL.Registro.csprojResolveAssemblyReference.cache
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\BL.Registro\obj\Debug\BL.Registro.dll
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\BL.Registro\obj\Debug\BL.Registro.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Registro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,19 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Win.RegistroNotas.BL.RegistroNotas;
+
 
 namespace Win.RegistroNotas
 {
     public partial class FormMenu : Form
     {
-        SeguridadBL _seguridadBL;
-
+   
         public FormMenu()
         {
             InitializeComponent();
 
-            _seguridadBL = new SeguridadBL();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,7 +77,6 @@ namespace Win.RegistroNotas
         private void FormMenu_Load(object sender, EventArgs e)
         {
             var formLogin = new FormLogin();
-            formLogin.CargarDatos(_seguridadBL);
             formLogin.ShowDialog();
 
 

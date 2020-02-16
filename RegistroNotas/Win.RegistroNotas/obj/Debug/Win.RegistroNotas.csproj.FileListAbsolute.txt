@@ -14,3 +14,5 @@ C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormReporteA.resources
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormReporteM.resources
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormReporteN.resources
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug\BL.Registro.dll
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug\BL.Registro.pdb

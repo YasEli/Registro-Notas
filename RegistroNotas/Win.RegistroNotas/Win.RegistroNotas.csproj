@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL.RegistroNotas\SeguridadBL.cs" />
     <Compile Include="FormAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +130,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\BL.Registro.AlumnosBL+Alumno.datasource" />
+    <None Include="Properties\DataSources\BL.Registro.AlumnosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Registro.SeguridadBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -149,6 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\registro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL.Registro\BL.Registro.csproj">
+      <Project>{05a368e6-ad68-44e4-bd27-757e9d6896f0}</Project>
+      <Name>BL.Registro</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
