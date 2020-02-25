@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlumnos));
-            System.Windows.Forms.Label anioCursadoLabel;
             System.Windows.Forms.Label cursoLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nombreLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlumnos));
+            System.Windows.Forms.Label anioLabel;
             System.Windows.Forms.Label numeroIdentidadLabel;
             this.listaAlumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaAlumnosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -49,20 +49,48 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaAlumnosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.anioCursadoTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.cursoTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.anioTextBox = new System.Windows.Forms.TextBox();
             this.numeroIdentidadTextBox = new System.Windows.Forms.TextBox();
-            anioCursadoLabel = new System.Windows.Forms.Label();
             cursoLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
+            anioLabel = new System.Windows.Forms.Label();
             numeroIdentidadLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaAlumnosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAlumnosBindingNavigator)).BeginInit();
             this.listaAlumnosBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // cursoLabel
+            // 
+            cursoLabel.AutoSize = true;
+            cursoLabel.Location = new System.Drawing.Point(12, 132);
+            cursoLabel.Name = "cursoLabel";
+            cursoLabel.Size = new System.Drawing.Size(37, 13);
+            cursoLabel.TabIndex = 3;
+            cursoLabel.Text = "Curso:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(12, 53);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 5;
+            idLabel.Text = "Id:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(12, 79);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 7;
+            nombreLabel.Text = "Nombre:";
             // 
             // listaAlumnosBindingSource
             // 
@@ -70,10 +98,10 @@
             // 
             // listaAlumnosBindingNavigator
             // 
-            this.listaAlumnosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.listaAlumnosBindingNavigator.AddNewItem = null;
             this.listaAlumnosBindingNavigator.BindingSource = this.listaAlumnosBindingSource;
             this.listaAlumnosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.listaAlumnosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.listaAlumnosBindingNavigator.DeleteItem = null;
             this.listaAlumnosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -86,7 +114,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.listaAlumnosBindingNavigatorSaveItem});
+            this.listaAlumnosBindingNavigatorSaveItem,
+            this.toolStripButtonCancelar});
             this.listaAlumnosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaAlumnosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaAlumnosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -94,9 +123,16 @@
             this.listaAlumnosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaAlumnosBindingNavigator.Name = "listaAlumnosBindingNavigator";
             this.listaAlumnosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaAlumnosBindingNavigator.Size = new System.Drawing.Size(409, 25);
+            this.listaAlumnosBindingNavigator.Size = new System.Drawing.Size(469, 25);
             this.listaAlumnosBindingNavigator.TabIndex = 0;
             this.listaAlumnosBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -130,16 +166,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -162,7 +191,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -173,6 +202,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -182,41 +212,27 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // listaAlumnosBindingNavigatorSaveItem
             // 
             this.listaAlumnosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.listaAlumnosBindingNavigatorSaveItem.Enabled = false;
             this.listaAlumnosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("listaAlumnosBindingNavigatorSaveItem.Image")));
             this.listaAlumnosBindingNavigatorSaveItem.Name = "listaAlumnosBindingNavigatorSaveItem";
             this.listaAlumnosBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.listaAlumnosBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.listaAlumnosBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaAlumnosBindingNavigatorSaveItem_Click);
             // 
-            // anioCursadoLabel
+            // toolStripButtonCancelar
             // 
-            anioCursadoLabel.AutoSize = true;
-            anioCursadoLabel.Location = new System.Drawing.Point(12, 161);
-            anioCursadoLabel.Name = "anioCursadoLabel";
-            anioCursadoLabel.Size = new System.Drawing.Size(71, 13);
-            anioCursadoLabel.TabIndex = 1;
-            anioCursadoLabel.Text = "Año Cursado:";
-            // 
-            // anioCursadoTextBox
-            // 
-            this.anioCursadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "AnioCursado", true));
-            this.anioCursadoTextBox.Location = new System.Drawing.Point(123, 158);
-            this.anioCursadoTextBox.Name = "anioCursadoTextBox";
-            this.anioCursadoTextBox.Size = new System.Drawing.Size(252, 20);
-            this.anioCursadoTextBox.TabIndex = 2;
-            // 
-            // cursoLabel
-            // 
-            cursoLabel.AutoSize = true;
-            cursoLabel.Location = new System.Drawing.Point(12, 132);
-            cursoLabel.Name = "cursoLabel";
-            cursoLabel.Size = new System.Drawing.Size(37, 13);
-            cursoLabel.TabIndex = 3;
-            cursoLabel.Text = "Curso:";
+            this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
+            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.Visible = false;
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
             // 
             // cursoTextBox
             // 
@@ -224,33 +240,17 @@
             this.cursoTextBox.Location = new System.Drawing.Point(123, 129);
             this.cursoTextBox.Name = "cursoTextBox";
             this.cursoTextBox.Size = new System.Drawing.Size(252, 20);
-            this.cursoTextBox.TabIndex = 4;
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(12, 53);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 5;
-            idLabel.Text = "Id:";
+            this.cursoTextBox.TabIndex = 3;
+            this.cursoTextBox.Tag = "3";
             // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "Id", true));
             this.idTextBox.Location = new System.Drawing.Point(123, 50);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(252, 20);
             this.idTextBox.TabIndex = 6;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(12, 79);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 7;
-            nombreLabel.Text = "Nombre:";
             // 
             // nombreTextBox
             // 
@@ -258,40 +258,61 @@
             this.nombreTextBox.Location = new System.Drawing.Point(123, 76);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(252, 20);
-            this.nombreTextBox.TabIndex = 8;
+            this.nombreTextBox.TabIndex = 1;
+            this.nombreTextBox.Tag = "1";
+            // 
+            // anioLabel
+            // 
+            anioLabel.AutoSize = true;
+            anioLabel.Location = new System.Drawing.Point(12, 158);
+            anioLabel.Name = "anioLabel";
+            anioLabel.Size = new System.Drawing.Size(29, 13);
+            anioLabel.TabIndex = 9;
+            anioLabel.Text = "Año:";
+            // 
+            // anioTextBox
+            // 
+            this.anioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "Anio", true));
+            this.anioTextBox.Location = new System.Drawing.Point(123, 155);
+            this.anioTextBox.Name = "anioTextBox";
+            this.anioTextBox.Size = new System.Drawing.Size(252, 20);
+            this.anioTextBox.TabIndex = 4;
+            this.anioTextBox.Tag = "4";
             // 
             // numeroIdentidadLabel
             // 
             numeroIdentidadLabel.AutoSize = true;
-            numeroIdentidadLabel.Location = new System.Drawing.Point(12, 105);
+            numeroIdentidadLabel.Location = new System.Drawing.Point(12, 106);
             numeroIdentidadLabel.Name = "numeroIdentidadLabel";
-            numeroIdentidadLabel.Size = new System.Drawing.Size(109, 13);
+            numeroIdentidadLabel.Size = new System.Drawing.Size(108, 13);
             numeroIdentidadLabel.TabIndex = 9;
-            numeroIdentidadLabel.Text = "Numero de Identidad:";
+            numeroIdentidadLabel.Text = "Numero de identidad:";
             // 
             // numeroIdentidadTextBox
             // 
             this.numeroIdentidadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "NumeroIdentidad", true));
-            this.numeroIdentidadTextBox.Location = new System.Drawing.Point(123, 102);
+            this.numeroIdentidadTextBox.Location = new System.Drawing.Point(123, 103);
             this.numeroIdentidadTextBox.Name = "numeroIdentidadTextBox";
             this.numeroIdentidadTextBox.Size = new System.Drawing.Size(252, 20);
-            this.numeroIdentidadTextBox.TabIndex = 10;
+            this.numeroIdentidadTextBox.TabIndex = 2;
+            this.numeroIdentidadTextBox.Tag = "2";
             // 
             // FormAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 219);
-            this.Controls.Add(anioCursadoLabel);
-            this.Controls.Add(this.anioCursadoTextBox);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(469, 222);
+            this.Controls.Add(numeroIdentidadLabel);
+            this.Controls.Add(this.numeroIdentidadTextBox);
+            this.Controls.Add(anioLabel);
+            this.Controls.Add(this.anioTextBox);
             this.Controls.Add(cursoLabel);
             this.Controls.Add(this.cursoTextBox);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(nombreLabel);
             this.Controls.Add(this.nombreTextBox);
-            this.Controls.Add(numeroIdentidadLabel);
-            this.Controls.Add(this.numeroIdentidadTextBox);
             this.Controls.Add(this.listaAlumnosBindingNavigator);
             this.Name = "FormAlumnos";
             this.Text = "Alumnos";
@@ -320,10 +341,11 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton listaAlumnosBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox anioCursadoTextBox;
         private System.Windows.Forms.TextBox cursoTextBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
         private System.Windows.Forms.TextBox numeroIdentidadTextBox;
+        public System.Windows.Forms.TextBox anioTextBox;
     }
 }
