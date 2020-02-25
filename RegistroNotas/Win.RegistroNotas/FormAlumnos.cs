@@ -67,7 +67,6 @@ namespace Win.RegistroNotas
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-
             if(idTextBox.Text != "")
             {
                 var resultado = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
@@ -78,7 +77,6 @@ namespace Win.RegistroNotas
                     Eliminar(id);
                 }    
             }
-            
         }
 
         private void Eliminar(int id)
