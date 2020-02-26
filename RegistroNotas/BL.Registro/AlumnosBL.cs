@@ -26,7 +26,7 @@ namespace BL.Registro
             var alumno2 = new Alumno();
             alumno2.Id = 2;
             alumno2.Nombre = "Edith Lopez";
-            alumno2.NumeroIdentidad = "0410199801044";
+            alumno2.NumeroIdentidad = "1234567891234";
             alumno2.Curso = "Inglés";
             alumno2.Anio = 2020;
 
