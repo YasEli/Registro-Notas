@@ -37,6 +37,7 @@ namespace Win.RegistroNotas
             {
                 listaAlumnosBindingSource.ResetBindings(false);
                 DesahilitarHabilitarBotones(true);
+                MessageBox.Show("¡Guardado!");
             }
             else
             {

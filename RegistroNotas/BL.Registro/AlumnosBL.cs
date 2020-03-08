@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,40 +11,19 @@ namespace BL.Registro
 {
     public class AlumnosBL
     {
+        Contexto _contexto;
         public BindingList<Alumno> ListaAlumnos { get; set; }
 
         public AlumnosBL()
         {
+            _contexto = new Contexto();
             ListaAlumnos = new BindingList<Alumno>();
-
-            var alumno1 = new Alumno();
-            alumno1.Id = 1;
-            alumno1.Nombre = "Jorge Cobos";
-            alumno1.NumeroIdentidad = "1234567891234";
-            alumno1.Curso = "Electricidad";
-            alumno1.Anio = 2020;
-
-            var alumno2 = new Alumno();
-            alumno2.Id = 2;
-            alumno2.Nombre = "Edith Lopez";
-            alumno2.NumeroIdentidad = "1234567891234";
-            alumno2.Curso = "Inglés";
-            alumno2.Anio = 2020;
-
-            var alumno3 = new Alumno();
-            alumno3.Id = 3;
-            alumno3.Nombre = "Greysi Alvarado";
-            alumno3.NumeroIdentidad = "1234567891234";
-            alumno3.Curso = "Contabilidad";
-            alumno3.Anio = 2020;
-
-            ListaAlumnos.Add(alumno1);
-            ListaAlumnos.Add(alumno2);
-            ListaAlumnos.Add(alumno3);
         }
 
         public BindingList<Alumno> ObtenerAlumnos()
         {
+            _contexto.Alumnos.Load();
+            ListaAlumnos = _contexto.Alumnos.Local.ToBindingList();
             return ListaAlumnos;
         }
 
@@ -57,10 +37,7 @@ namespace BL.Registro
                 return resultado;
             }
 
-            if(alumno.Id == 0)
-            {
-                alumno.Id = ListaAlumnos.Max(item => item.Id) + 1;
-            }
+            _contexto.SaveChanges();
 
             resultado.Exitoso = true;
             return resultado;
@@ -81,6 +58,7 @@ namespace BL.Registro
                 if(alumno.Id == id)
                 {
                     ListaAlumnos.Remove(alumno);
+                    _contexto.SaveChanges();
                     return true;
                 }
             }
@@ -143,6 +121,7 @@ namespace BL.Registro
 
             return resultado;
         }
+
         public class Alumno
         {
             public int Id { get; set; }
