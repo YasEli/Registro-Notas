@@ -27,6 +27,15 @@ namespace BL.Registro
             return ListaAlumnos;
         }
 
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
+
         //Método para guardar
         public Resultado GuardarAlumno(Alumno alumno)
         {
@@ -76,13 +85,6 @@ namespace BL.Registro
                 resultado.Exitoso = false;
             }
 
-            
-            if(string.IsNullOrEmpty(alumno.Curso) == true)
-            {
-                resultado.Mensaje = "Ingrese un curso.";
-                resultado.Exitoso = false;
-            }
-            
             if(Convert.ToString(alumno.Anio).Trim().Length > 4)
             {
                 resultado.Mensaje = "Ingrese un año correcto";
@@ -119,6 +121,24 @@ namespace BL.Registro
                 resultado.Exitoso = false;
             }
 
+           if(alumno.MateriaId == 0)
+            {
+                resultado.Mensaje = "Seleccione una materia.";
+                resultado.Exitoso = false;
+            }
+
+           if(alumno.SeccionId == 0)
+            {
+                resultado.Mensaje = "Seleccione una seccion.";
+                resultado.Exitoso = false;
+            }
+
+            if (alumno.CarreraId == 0)
+            {
+                resultado.Mensaje = "Seleccione una carrera.";
+                resultado.Exitoso = false;
+            }
+
             return resultado;
         }
 
@@ -127,8 +147,14 @@ namespace BL.Registro
             public int Id { get; set; }
             public string Nombre { get; set; }
             public string NumeroIdentidad { get; set; }
-            public string Curso { get; set; }
+            public int CarreraId { get; set; }
+            public Carrera Carrera { get; set; }
             public double Anio { get; set; }
+            public byte[] Foto  { get; set; }
+            public int MateriaId { get; set; }
+            public Materia Materia { get; set; }
+            public int SeccionId { get; set; }
+            public Seccion Seccion { get; set; }
         }
 
         public class Resultado

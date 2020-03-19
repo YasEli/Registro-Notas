@@ -145,6 +145,9 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Registro.AlumnosBL+Alumno.datasource" />
     <None Include="Properties\DataSources\BL.Registro.AlumnosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Registro.CarrerasBL.datasource" />
+    <None Include="Properties\DataSources\BL.Registro.MateriasBL.datasource" />
+    <None Include="Properties\DataSources\BL.Registro.SeccionesBL.datasource" />
     <None Include="Properties\DataSources\BL.Registro.SeguridadBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

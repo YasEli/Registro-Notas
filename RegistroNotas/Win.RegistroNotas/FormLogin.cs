@@ -33,6 +33,10 @@ namespace Win.RegistroNotas
             var nombre = textBox1.Text;
             var contrasena = textBox2.Text;
 
+            button1.Enabled = false;
+            button1.Text = "Verificando...";
+            Application.DoEvents();
+
             var usuarioAutenticar = _seguridadBL.Autenticar(nombre, contrasena);
 
             if(usuarioAutenticar == true)
