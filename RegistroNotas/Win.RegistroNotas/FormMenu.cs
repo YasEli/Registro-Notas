@@ -81,5 +81,24 @@ namespace Win.RegistroNotas
 
 
         }
+
+        private void carrerasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formCarreras = new FormCarreras();
+            formCarreras.MdiParent = this;
+            formCarreras.Show();
+        }
+
+        private void seccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formSecciones = new FormSecciones();
+            formSecciones.MdiParent = this;
+            formSecciones.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

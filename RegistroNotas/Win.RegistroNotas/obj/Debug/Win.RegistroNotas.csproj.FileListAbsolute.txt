@@ -20,3 +20,5 @@ C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug\EntityFramework.xml
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormCarreras.resources
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormSecciones.resources

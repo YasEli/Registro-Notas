@@ -49,13 +49,13 @@ namespace BL.Registro
             contexto.Materias.Add(materia4);
 
             var seccion1 = new Seccion();
-            seccion1.Descripcion = "1";
+            seccion1.Descripcion = "S1";
 
             var seccion2 = new Seccion();
-            seccion2.Descripcion = "2";
+            seccion2.Descripcion = "S2";
 
             var seccion3 = new Seccion();
-            seccion3.Descripcion = "3";
+            seccion3.Descripcion = "S3";
 
             contexto.Secciones.Add(seccion1);
             contexto.Secciones.Add(seccion2);

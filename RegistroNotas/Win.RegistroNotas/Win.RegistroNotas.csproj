@@ -64,6 +64,12 @@
     <Compile Include="FormAlumnos.Designer.cs">
       <DependentUpon>FormAlumnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCarreras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCarreras.Designer.cs">
+      <DependentUpon>FormCarreras.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,10 +112,19 @@
     <Compile Include="FormReporteN.Designer.cs">
       <DependentUpon>FormReporteN.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSecciones.Designer.cs">
+      <DependentUpon>FormSecciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAlumnos.resx">
       <DependentUpon>FormAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCarreras.resx">
+      <DependentUpon>FormCarreras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -131,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporteN.resx">
       <DependentUpon>FormReporteN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSecciones.resx">
+      <DependentUpon>FormSecciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

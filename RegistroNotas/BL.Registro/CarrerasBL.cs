@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Data.Entity;
+using static BL.Registro.AlumnosBL;
 
 namespace BL.Registro
 {
@@ -22,6 +23,71 @@ namespace BL.Registro
             return ListaCarreras;
         }
 
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
+
+        public Resultado GuardarCarrera(Carrera carrera)
+        {
+            var resultado = Validar(carrera);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+
+            _contexto.SaveChanges();
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarCarrera()
+        {
+            var nuevaCarrera = new Carrera();
+            _contexto.Carreras.Add(nuevaCarrera);
+        }
+
+        public bool EliminarCarrera(int id)
+        {
+            foreach (var carrera in ListaCarreras)
+            {
+                if (carrera.Id == id)
+                {
+                    ListaCarreras.Remove(carrera);
+                    _contexto.SaveChanges();
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        private Resultado Validar(Carrera carrera)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+            if (carrera == null)
+            {
+                resultado.Mensaje = "Agregue una carrera valida";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
+            if (string.IsNullOrEmpty(carrera.Descripcion) == true)
+            {
+                resultado.Mensaje = "Ingrese una descripcion";
+                resultado.Exitoso = false;
+            }
+
+            return resultado;
+        }
     }
 
     public class Carrera
