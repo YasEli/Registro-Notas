@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BL.Registro.AlumnosBL;
 
 namespace BL.Registro
 {
@@ -26,6 +27,72 @@ namespace BL.Registro
             ListaMaterias = _contexto.Materias.Local.ToBindingList();
 
             return ListaMaterias;
+        }
+
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
+
+        public Resultado GuardarMateria(Materia materia)
+        {
+            var resultado = Validar(materia);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+
+            _contexto.SaveChanges();
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarMateria()
+        {
+            var nuevaMateria = new Materia();
+            _contexto.Materias.Add(nuevaMateria);
+        }
+
+        public bool EliminarMateria(int id)
+        {
+            foreach (var materia in ListaMaterias)
+            {
+                if (materia.Id == id)
+                {
+                    ListaMaterias.Remove(materia);
+                    _contexto.SaveChanges();
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        private Resultado Validar(Materia materia)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+            if (materia == null)
+            {
+                resultado.Mensaje = "Agregue una materia valida";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
+            if (string.IsNullOrEmpty(materia.Descripcion) == true)
+            {
+                resultado.Mensaje = "Ingrese una descripcion";
+                resultado.Exitoso = false;
+            }
+
+            return resultado;
         }
     }
 
