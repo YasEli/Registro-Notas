@@ -35,8 +35,9 @@
             System.Windows.Forms.Label numeroIdentidadLabel;
             System.Windows.Forms.Label materiaIdLabel;
             System.Windows.Forms.Label seccionIdLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlumnos));
             System.Windows.Forms.Label carreraIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlumnos));
+            System.Windows.Forms.Label notaLabel;
             this.listaAlumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaAlumnosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -66,6 +67,7 @@
             this.seccionIdComboBox = new System.Windows.Forms.ComboBox();
             this.listaCarrerasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carreraIdComboBox = new System.Windows.Forms.ComboBox();
+            this.notaTextBox = new System.Windows.Forms.TextBox();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             anioLabel = new System.Windows.Forms.Label();
@@ -73,6 +75,7 @@
             materiaIdLabel = new System.Windows.Forms.Label();
             seccionIdLabel = new System.Windows.Forms.Label();
             carreraIdLabel = new System.Windows.Forms.Label();
+            notaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaAlumnosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAlumnosBindingNavigator)).BeginInit();
             this.listaAlumnosBindingNavigator.SuspendLayout();
@@ -103,7 +106,7 @@
             // anioLabel
             // 
             anioLabel.AutoSize = true;
-            anioLabel.Location = new System.Drawing.Point(12, 225);
+            anioLabel.Location = new System.Drawing.Point(12, 247);
             anioLabel.Name = "anioLabel";
             anioLabel.Size = new System.Drawing.Size(29, 13);
             anioLabel.TabIndex = 9;
@@ -135,6 +138,15 @@
             seccionIdLabel.Size = new System.Drawing.Size(49, 13);
             seccionIdLabel.TabIndex = 16;
             seccionIdLabel.Text = "Seccion:";
+            // 
+            // carreraIdLabel
+            // 
+            carreraIdLabel.AutoSize = true;
+            carreraIdLabel.Location = new System.Drawing.Point(12, 135);
+            carreraIdLabel.Name = "carreraIdLabel";
+            carreraIdLabel.Size = new System.Drawing.Size(44, 13);
+            carreraIdLabel.TabIndex = 17;
+            carreraIdLabel.Text = "Carrera:";
             // 
             // listaAlumnosBindingSource
             // 
@@ -299,7 +311,7 @@
             // anioTextBox
             // 
             this.anioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "Anio", true));
-            this.anioTextBox.Location = new System.Drawing.Point(123, 222);
+            this.anioTextBox.Location = new System.Drawing.Point(123, 244);
             this.anioTextBox.Name = "anioTextBox";
             this.anioTextBox.Size = new System.Drawing.Size(252, 20);
             this.anioTextBox.TabIndex = 4;
@@ -387,15 +399,6 @@
             // 
             this.listaCarrerasBindingSource.DataSource = typeof(BL.Registro.Carrera);
             // 
-            // carreraIdLabel
-            // 
-            carreraIdLabel.AutoSize = true;
-            carreraIdLabel.Location = new System.Drawing.Point(12, 135);
-            carreraIdLabel.Name = "carreraIdLabel";
-            carreraIdLabel.Size = new System.Drawing.Size(44, 13);
-            carreraIdLabel.TabIndex = 17;
-            carreraIdLabel.Text = "Carrera:";
-            // 
             // carreraIdComboBox
             // 
             this.carreraIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaAlumnosBindingSource, "CarreraId", true));
@@ -409,12 +412,31 @@
             this.carreraIdComboBox.TabIndex = 18;
             this.carreraIdComboBox.ValueMember = "Id";
             // 
+            // notaLabel
+            // 
+            notaLabel.AutoSize = true;
+            notaLabel.Location = new System.Drawing.Point(12, 225);
+            notaLabel.Name = "notaLabel";
+            notaLabel.Size = new System.Drawing.Size(33, 13);
+            notaLabel.TabIndex = 18;
+            notaLabel.Text = "Nota:";
+            // 
+            // notaTextBox
+            // 
+            this.notaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "Nota", true));
+            this.notaTextBox.Location = new System.Drawing.Point(123, 218);
+            this.notaTextBox.Name = "notaTextBox";
+            this.notaTextBox.Size = new System.Drawing.Size(252, 20);
+            this.notaTextBox.TabIndex = 19;
+            // 
             // FormAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(670, 281);
+            this.ClientSize = new System.Drawing.Size(670, 301);
+            this.Controls.Add(notaLabel);
+            this.Controls.Add(this.notaTextBox);
             this.Controls.Add(carreraIdLabel);
             this.Controls.Add(this.carreraIdComboBox);
             this.Controls.Add(seccionIdLabel);
@@ -479,5 +501,6 @@
         private System.Windows.Forms.ComboBox seccionIdComboBox;
         private System.Windows.Forms.BindingSource listaCarrerasBindingSource;
         private System.Windows.Forms.ComboBox carreraIdComboBox;
+        private System.Windows.Forms.TextBox notaTextBox;
     }
 }

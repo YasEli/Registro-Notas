@@ -59,7 +59,7 @@ namespace BL.Registro
 
         public bool EliminarMateria(int id)
         {
-            foreach (var materia in ListaMaterias)
+            foreach (var materia in ListaMaterias.ToList())
             {
                 if (materia.Id == id)
                 {

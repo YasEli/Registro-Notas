@@ -79,6 +79,14 @@ namespace BL.Registro
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+            if(alumno == null)
+            {
+                resultado.Mensaje = "Agregue un alumno.";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
             if(string.IsNullOrEmpty(alumno.Nombre) == true)
             {
                 resultado.Mensaje = "Ingrese un nombre";
@@ -139,6 +147,12 @@ namespace BL.Registro
                 resultado.Exitoso = false;
             }
 
+            if(alumno.Nota < 0 || alumno.Nota > 100)
+            {
+                resultado.Mensaje = "Ingrese una nota valida.";
+                resultado.Exitoso = false;
+            }
+
             return resultado;
         }
 
@@ -155,6 +169,7 @@ namespace BL.Registro
             public Materia Materia { get; set; }
             public int SeccionId { get; set; }
             public Seccion Seccion { get; set; }
+            public int Nota { get; set; }
         }
 
         public class Resultado

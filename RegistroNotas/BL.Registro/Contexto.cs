@@ -26,7 +26,8 @@ namespace BL.Registro
         public DbSet<Alumno> Alumnos { get; set; }
         public DbSet<Materia> Materias { get; set; }
         public DbSet<Seccion> Secciones { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Carrera> Carreras { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+       public DbSet<Transaccion> Transacciones { get; set; }
     }
 }

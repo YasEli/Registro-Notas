@@ -13,8 +13,8 @@ namespace BL.Registro
         protected override void Seed(Contexto contexto)
         {
             var usuarioAdmin = new Usuario();
-            usuarioAdmin.Nombre = "admin";
-            usuarioAdmin.Contrasena = "1234";
+            usuarioAdmin.Nombre = "admin1";
+            usuarioAdmin.Contrasena = "0123";
 
             contexto.Usuarios.Add(usuarioAdmin);
 
@@ -60,7 +60,7 @@ namespace BL.Registro
             contexto.Secciones.Add(seccion1);
             contexto.Secciones.Add(seccion2);
             contexto.Secciones.Add(seccion3);
-
+            
             base.Seed(contexto);
         }
     }

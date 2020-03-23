@@ -59,7 +59,7 @@ namespace BL.Registro
 
         public bool EliminarSeccion(int id)
         {
-            foreach (var seccion in ListaSecciones)
+            foreach (var seccion in ListaSecciones.ToList())
             {
                 if (seccion.Id == id)
                 {

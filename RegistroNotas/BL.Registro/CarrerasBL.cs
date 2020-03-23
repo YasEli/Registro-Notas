@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Data.Entity;
+using System.Linq;
 using static BL.Registro.AlumnosBL;
 
 namespace BL.Registro
@@ -7,6 +8,7 @@ namespace BL.Registro
     public class CarrerasBL
     {
         Contexto _contexto;
+
         public BindingList<Carrera> ListaCarreras { get; set; }
 
         public CarrerasBL()
@@ -53,7 +55,7 @@ namespace BL.Registro
 
         public bool EliminarCarrera(int id)
         {
-            foreach (var carrera in ListaCarreras)
+            foreach (var carrera in ListaCarreras.ToList())
             {
                 if (carrera.Id == id)
                 {
