@@ -36,8 +36,8 @@
             System.Windows.Forms.Label materiaIdLabel;
             System.Windows.Forms.Label seccionIdLabel;
             System.Windows.Forms.Label carreraIdLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlumnos));
             System.Windows.Forms.Label notaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlumnos));
             this.listaAlumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaAlumnosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -147,6 +147,15 @@
             carreraIdLabel.Size = new System.Drawing.Size(44, 13);
             carreraIdLabel.TabIndex = 17;
             carreraIdLabel.Text = "Carrera:";
+            // 
+            // notaLabel
+            // 
+            notaLabel.AutoSize = true;
+            notaLabel.Location = new System.Drawing.Point(12, 225);
+            notaLabel.Name = "notaLabel";
+            notaLabel.Size = new System.Drawing.Size(33, 13);
+            notaLabel.TabIndex = 18;
+            notaLabel.Text = "Nota:";
             // 
             // listaAlumnosBindingSource
             // 
@@ -411,15 +420,6 @@
             this.carreraIdComboBox.Size = new System.Drawing.Size(252, 21);
             this.carreraIdComboBox.TabIndex = 18;
             this.carreraIdComboBox.ValueMember = "Id";
-            // 
-            // notaLabel
-            // 
-            notaLabel.AutoSize = true;
-            notaLabel.Location = new System.Drawing.Point(12, 225);
-            notaLabel.Name = "notaLabel";
-            notaLabel.Size = new System.Drawing.Size(33, 13);
-            notaLabel.TabIndex = 18;
-            notaLabel.Text = "Nota:";
             // 
             // notaTextBox
             // 

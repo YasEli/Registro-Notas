@@ -53,27 +53,6 @@ namespace Win.RegistroNotas
             formNotas.Show();
         }
 
-        private void reporteDeAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formReporteA = new FormReporteA();
-            formReporteA.MdiParent = this;
-            formReporteA.Show();
-        }
-
-        private void reporteDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formReporteM = new FormReporteM();
-            formReporteM.MdiParent = this;
-            formReporteM.Show();
-        }
-
-        private void reporteDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formReporteN = new FormReporteN();
-            formReporteN.MdiParent = this;
-            formReporteN.Show();
-        }
-
         private void FormMenu_Load(object sender, EventArgs e)
         {
             var formLogin = new FormLogin();
@@ -99,6 +78,20 @@ namespace Win.RegistroNotas
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void reporteDeAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReporteAlumnos = new FormReporteAlumnos();
+            formReporteAlumnos.MdiParent = this;
+            formReporteAlumnos.Show();
+        }
+
+        private void rToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReporteTransaccion = new FormReporteTransaccion();
+            formReporteTransaccion.MdiParent = this;
+            formReporteTransaccion.Show();
         }
     }
 }
