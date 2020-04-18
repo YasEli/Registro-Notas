@@ -5,11 +5,13 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BL.Registro.SeguridadBL;
 
 namespace Win.RegistroNotas
 {
     static class Program
     {
+        public static Usuario UsuarioLogueado;
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

@@ -12,11 +12,12 @@ namespace BL.Registro
     {
         protected override void Seed(Contexto contexto)
         {
-            var usuarioAdmin = new Usuario();
-            usuarioAdmin.Nombre = "admin1";
-            usuarioAdmin.Contrasena = "0123";
+            var usuario = new Usuario();
+            usuario.Nombre = "admin";
+            usuario.Contrasena = "123";
+            usuario.TipoUsuario = "Administradores";
 
-            contexto.Usuarios.Add(usuarioAdmin);
+            contexto.Usuarios.Add(usuario);
 
             var carrera1 = new Carrera();
             carrera1.Descripcion = "Administracion de Empresas";

@@ -40,3 +40,4 @@ C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormReporteAlumnos.resources
 C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormReporteTransaccion.resources
+C:\Users\Yasmin Coto\Desktop\Yasmin\L3\RegistroNotas\Win.RegistroNotas\obj\Debug\Win.RegistroNotas.FormUsuarios.resources

@@ -30,6 +30,12 @@ namespace Win.RegistroNotas
         {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
+
+            if(Program.UsuarioLogueado != null)
+            {
+                toolStripStatusLabel1.Text = "Usuario: " 
+                    + Program.UsuarioLogueado.Nombre;
+            }
         }
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,5 +99,13 @@ namespace Win.RegistroNotas
             formReporteTransaccion.MdiParent = this;
             formReporteTransaccion.Show();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formUsuarios = new FormUsuarios();
+            formUsuarios.MdiParent = this;
+            formUsuarios.Show();
+        }
+        
     }
 }
