@@ -33,8 +33,46 @@ namespace Win.RegistroNotas
 
             if(Program.UsuarioLogueado != null)
             {
-                toolStripStatusLabel1.Text = "Usuario: " 
-                    + Program.UsuarioLogueado.Nombre;
+                toolStripStatusLabel1.Text = "Usuario: " + Program.UsuarioLogueado.Nombre;
+
+                if(Program.UsuarioLogueado.TipoUsuario == "Registrador de alumnos")
+                {
+                    alumnosToolStripMenuItem.Visible = true;
+                    materiasToolStripMenuItem.Visible = true;
+                    seccionesToolStripMenuItem.Visible = true;
+                    carrerasToolStripMenuItem.Visible = true;
+                    registrarNotasToolStripMenuItem.Visible = false;
+                    reporteDeAlumnosToolStripMenuItem.Visible = true;
+                    rToolStripMenuItem.Visible = false;
+                    usuariosToolStripMenuItem.Visible = false;
+                }
+
+                if (Program.UsuarioLogueado.TipoUsuario == "Registrador de notas")
+                {
+                    alumnosToolStripMenuItem.Visible = false;
+                    materiasToolStripMenuItem.Visible = false;
+                    seccionesToolStripMenuItem.Visible = false;
+                    carrerasToolStripMenuItem.Visible = false;
+                    registrarNotasToolStripMenuItem.Visible = true;
+                    reporteDeAlumnosToolStripMenuItem.Visible = false;
+                    rToolStripMenuItem.Visible = true;
+                    usuariosToolStripMenuItem.Visible = false;
+                }
+
+                if (Program.UsuarioLogueado.TipoUsuario == "Administradores")
+                {
+                    alumnosToolStripMenuItem.Visible = true;
+                    materiasToolStripMenuItem.Visible = true;
+                    seccionesToolStripMenuItem.Visible = true;
+                    carrerasToolStripMenuItem.Visible = true;
+                    registrarNotasToolStripMenuItem.Visible = true;
+                    reporteDeAlumnosToolStripMenuItem.Visible = true;
+                    rToolStripMenuItem.Visible = true;
+                    usuariosToolStripMenuItem.Visible = true;
+                }
+            }else
+            {
+                Application.Exit();
             }
         }
 
@@ -63,7 +101,6 @@ namespace Win.RegistroNotas
         {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
-
 
         }
 

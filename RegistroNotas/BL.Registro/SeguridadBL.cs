@@ -87,19 +87,18 @@ namespace BL.Registro
 
             return resultado;
         }
-
-        public Usuario Autorizar(string nombreUsuario, string contrasena)
+        
+        public Usuario Autorizar(string nombre, string contrasena)
         {
             var usuarios = _contexto.Usuarios.ToList();
 
-            foreach (var usuarioDB in usuarios)
+            foreach (var usuario in usuarios)
             {
-                if (nombreUsuario == usuarioDB.Nombre && contrasena == usuarioDB.Contrasena)
+                if(nombre == usuario.Nombre && contrasena == usuario.Contrasena)
                 {
-                    return usuarioDB;
+                    return usuario;
                 }
             }
-
             return null;
         }
         

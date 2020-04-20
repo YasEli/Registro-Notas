@@ -14,7 +14,7 @@ namespace BL.Registro
         {
             var usuario = new Usuario();
             usuario.Nombre = "admin";
-            usuario.Contrasena = "123";
+            usuario.Contrasena = "1234";
             usuario.TipoUsuario = "Administradores";
 
             contexto.Usuarios.Add(usuario);
