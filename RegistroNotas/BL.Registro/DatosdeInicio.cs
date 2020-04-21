@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BL.Registro.AlumnosBL;
 using static BL.Registro.SeguridadBL;
 
 namespace BL.Registro
@@ -19,6 +21,7 @@ namespace BL.Registro
 
             contexto.Usuarios.Add(usuario);
 
+            /*
             var carrera1 = new Carrera();
             carrera1.Descripcion = "Administracion de Empresas";
 
@@ -48,6 +51,7 @@ namespace BL.Registro
             contexto.Materias.Add(materia2);
             contexto.Materias.Add(materia3);
             contexto.Materias.Add(materia4);
+            */
 
             var seccion1 = new Seccion();
             seccion1.Descripcion = "S1";
@@ -61,7 +65,41 @@ namespace BL.Registro
             contexto.Secciones.Add(seccion1);
             contexto.Secciones.Add(seccion2);
             contexto.Secciones.Add(seccion3);
-            
+
+            var archivo = "../../../clientes.csv";
+            using (var reader = new StreamReader(archivo))
+            {
+                reader.ReadLine(); // Lee primera fila de encabezados
+
+                while (!reader.EndOfStream)
+                {
+                    var linea = reader.ReadLine();
+                    var valores = linea.Split(',');
+
+                    var materiaNueva = new Materia();
+                    materiaNueva.Descripcion = valores[0].ToString();
+                    
+                    contexto.Materias.Add(materiaNueva);
+                }
+            }
+
+            var archivo2 = "../../../carreras.csv";
+            using (var reader = new StreamReader(archivo2))
+            {
+                reader.ReadLine(); // Lee primera fila de encabezados
+
+                while (!reader.EndOfStream)
+                {
+                    var linea = reader.ReadLine();
+                    var valores = linea.Split(',');
+
+                    var carreraNueva = new Carrera();
+                    carreraNueva.Descripcion = valores[0].ToString();
+                    
+                    contexto.Carreras.Add(carreraNueva);
+                }
+            }
+
             base.Seed(contexto);
         }
     }
