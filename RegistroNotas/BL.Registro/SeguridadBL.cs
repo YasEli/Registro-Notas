@@ -23,10 +23,21 @@ namespace BL.Registro
 
         public BindingList<Usuario> ObtenerUsuarios()
         {
-            _contexto.Usuarios.Load();
-            ListaUsuarios = _contexto.Usuarios.Local.ToBindingList();
+            ListaUsuarios = new BindingList<Usuario>(
+                _contexto.Usuarios.OrderBy(o => o.Nombre).ToList()
+            );
 
             return ListaUsuarios;
+        }
+
+        public BindingList<Usuario> ObtenerUsuarios(string buscar)
+        {
+            var query = _contexto.Usuarios
+                .Where(u => u.Nombre.ToLower().Contains(buscar.ToLower()) == true).ToList();
+
+            var resultado = new BindingList<Usuario>(query);
+
+            return resultado;
         }
 
         public void CancelarCambios()

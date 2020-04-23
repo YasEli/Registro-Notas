@@ -51,7 +51,7 @@ namespace BL.Registro
             contexto.Materias.Add(materia2);
             contexto.Materias.Add(materia3);
             contexto.Materias.Add(materia4);
-            */
+            
 
             var seccion1 = new Seccion();
             seccion1.Descripcion = "S1";
@@ -65,6 +65,7 @@ namespace BL.Registro
             contexto.Secciones.Add(seccion1);
             contexto.Secciones.Add(seccion2);
             contexto.Secciones.Add(seccion3);
+            */
 
             var archivo = "../../../clientes.csv";
             using (var reader = new StreamReader(archivo))
@@ -97,6 +98,23 @@ namespace BL.Registro
                     carreraNueva.Descripcion = valores[0].ToString();
                     
                     contexto.Carreras.Add(carreraNueva);
+                }
+            }
+
+            var archivo3 = "../../../secciones.csv";
+            using (var reader = new StreamReader(archivo3))
+            {
+                reader.ReadLine(); // Lee primera fila de encabezados
+
+                while (!reader.EndOfStream)
+                {
+                    var linea = reader.ReadLine();
+                    var valores = linea.Split(',');
+
+                    var seccionNueva = new Seccion();
+                    seccionNueva.Descripcion = valores[0].ToString();
+
+                    contexto.Secciones.Add(seccionNueva);
                 }
             }
 

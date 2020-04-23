@@ -29,6 +29,16 @@ namespace BL.Registro
             return ListaSecciones;
         }
 
+        public BindingList<Seccion> ObtenerSecciones(string buscar)
+        {
+            var query = _contexto.Secciones
+                .Where(s => s.Descripcion.ToLower().Contains(buscar.ToLower()) == true).ToList();
+
+            var resultado = new BindingList<Seccion>(query);
+
+            return resultado;
+        }
+
         public void CancelarCambios()
         {
             foreach (var item in _contexto.ChangeTracker.Entries())

@@ -23,10 +23,21 @@ namespace BL.Registro
 
         public BindingList<Materia> ObtenerMaterias()
         {
-            _contexto.Materias.Load();
-            ListaMaterias = _contexto.Materias.Local.ToBindingList();
+            ListaMaterias = new BindingList<Materia>(
+                _contexto.Materias.OrderBy(o => o.Descripcion).ToList()
+            );
 
             return ListaMaterias;
+        }
+
+        public BindingList<Materia> ObtenerMaterias(string buscar)
+        {
+            var query = _contexto.Materias
+                .Where(m => m.Descripcion.ToLower().Contains(buscar.ToLower()) == true).ToList();
+
+            var resultado = new BindingList<Materia>(query);
+
+            return resultado;
         }
 
         public void CancelarCambios()

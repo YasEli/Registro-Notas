@@ -19,10 +19,21 @@ namespace BL.Registro
 
         public BindingList<Carrera> ObtenerCarreras()
         {
-            _contexto.Carreras.Load();
-            ListaCarreras = _contexto.Carreras.Local.ToBindingList();
+            ListaCarreras = new BindingList<Carrera>(
+                _contexto.Carreras.OrderBy(o => o.Descripcion).ToList()
+            );
 
             return ListaCarreras;
+        }
+
+        public BindingList<Carrera> ObtenerCarreras(string buscar)
+        {
+            var query = _contexto.Carreras
+                .Where(c => c.Descripcion.ToLower().Contains(buscar.ToLower()) == true).ToList();
+
+            var resultado = new BindingList<Carrera>(query);
+
+            return resultado;
         }
 
         public void CancelarCambios()

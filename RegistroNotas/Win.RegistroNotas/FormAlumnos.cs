@@ -146,5 +146,20 @@ namespace Win.RegistroNotas
         {
             fotoPictureBox.Image = null;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var buscar = textBox1.Text;
+
+            if(string.IsNullOrEmpty(buscar) == true)
+            {
+                listaAlumnosBindingSource.DataSource = _alumnos.ObtenerAlumnos();
+            }else
+            {
+                listaAlumnosBindingSource.DataSource = _alumnos.ObtenerAlumnos(buscar);
+            }
+
+            listaAlumnosBindingSource.ResetBindings(true);
+        }
     }
 }

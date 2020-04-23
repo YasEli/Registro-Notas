@@ -31,12 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label fechaLabel;
             System.Windows.Forms.Label idLabel;
-            System.Windows.Forms.Label materiaIdLabel;
             System.Windows.Forms.Label promedioLabel;
-            System.Windows.Forms.Label seccionIdLabel;
             System.Windows.Forms.Label activoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNotas));
-            this.listaTransaccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.Windows.Forms.Label materiaIdLabel;
+            System.Windows.Forms.Label seccionIdLabel;
             this.listaTransaccionesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -54,34 +53,35 @@
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.promedioTextBox = new System.Windows.Forms.TextBox();
-            this.listaMateriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaSeccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaAlumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.materiaIdComboBox = new System.Windows.Forms.ComboBox();
-            this.seccionIdComboBox = new System.Windows.Forms.ComboBox();
             this.transaccionDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.transaccionDetalleDataGridView = new System.Windows.Forms.DataGridView();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listaTransaccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.listaMateriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaSeccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materiaIdComboBox = new System.Windows.Forms.ComboBox();
+            this.seccionIdComboBox = new System.Windows.Forms.ComboBox();
             fechaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
-            materiaIdLabel = new System.Windows.Forms.Label();
             promedioLabel = new System.Windows.Forms.Label();
-            seccionIdLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionesBindingSource)).BeginInit();
+            materiaIdLabel = new System.Windows.Forms.Label();
+            seccionIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionesBindingNavigator)).BeginInit();
             this.listaTransaccionesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaMateriasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaSeccionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAlumnosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionDetalleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionDetalleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaMateriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaSeccionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // fechaLabel
@@ -102,15 +102,6 @@
             idLabel.TabIndex = 3;
             idLabel.Text = "Id:";
             // 
-            // materiaIdLabel
-            // 
-            materiaIdLabel.AutoSize = true;
-            materiaIdLabel.Location = new System.Drawing.Point(12, 135);
-            materiaIdLabel.Name = "materiaIdLabel";
-            materiaIdLabel.Size = new System.Drawing.Size(45, 13);
-            materiaIdLabel.TabIndex = 5;
-            materiaIdLabel.Text = "Materia:";
-            // 
             // promedioLabel
             // 
             promedioLabel.AutoSize = true;
@@ -120,28 +111,14 @@
             promedioLabel.TabIndex = 9;
             promedioLabel.Text = "Promedio:";
             // 
-            // seccionIdLabel
-            // 
-            seccionIdLabel.AutoSize = true;
-            seccionIdLabel.Location = new System.Drawing.Point(12, 163);
-            seccionIdLabel.Name = "seccionIdLabel";
-            seccionIdLabel.Size = new System.Drawing.Size(49, 13);
-            seccionIdLabel.TabIndex = 11;
-            seccionIdLabel.Text = "Seccion:";
-            // 
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(217, 74);
+            activoLabel.Location = new System.Drawing.Point(247, 79);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 16;
             activoLabel.Text = "Activo:";
-            // 
-            // listaTransaccionesBindingSource
-            // 
-            this.listaTransaccionesBindingSource.DataSource = typeof(BL.Registro.Transaccion);
-            this.listaTransaccionesBindingSource.CurrentChanged += new System.EventHandler(this.listaTransaccionesBindingSource_CurrentChanged);
             // 
             // listaTransaccionesBindingNavigator
             // 
@@ -284,7 +261,7 @@
             // fechaDateTimePicker
             // 
             this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaTransaccionesBindingSource, "Fecha", true));
-            this.fechaDateTimePicker.Location = new System.Drawing.Point(79, 101);
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(109, 106);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaDateTimePicker.TabIndex = 2;
@@ -292,7 +269,7 @@
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTransaccionesBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "00000"));
-            this.idTextBox.Location = new System.Drawing.Point(79, 67);
+            this.idTextBox.Location = new System.Drawing.Point(109, 72);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(53, 20);
@@ -308,43 +285,9 @@
             this.promedioTextBox.TabIndex = 10;
             this.promedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // listaMateriasBindingSource
-            // 
-            this.listaMateriasBindingSource.DataSource = typeof(BL.Registro.Materia);
-            // 
-            // listaSeccionesBindingSource
-            // 
-            this.listaSeccionesBindingSource.DataSource = typeof(BL.Registro.Seccion);
-            // 
             // listaAlumnosBindingSource
             // 
             this.listaAlumnosBindingSource.DataSource = typeof(BL.Registro.AlumnosBL.Alumno);
-            // 
-            // materiaIdComboBox
-            // 
-            this.materiaIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionesBindingSource, "MateriaId", true));
-            this.materiaIdComboBox.DataSource = this.listaMateriasBindingSource;
-            this.materiaIdComboBox.DisplayMember = "Descripcion";
-            this.materiaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materiaIdComboBox.FormattingEnabled = true;
-            this.materiaIdComboBox.Location = new System.Drawing.Point(79, 132);
-            this.materiaIdComboBox.Name = "materiaIdComboBox";
-            this.materiaIdComboBox.Size = new System.Drawing.Size(200, 21);
-            this.materiaIdComboBox.TabIndex = 13;
-            this.materiaIdComboBox.ValueMember = "Id";
-            // 
-            // seccionIdComboBox
-            // 
-            this.seccionIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionesBindingSource, "SeccionId", true));
-            this.seccionIdComboBox.DataSource = this.listaSeccionesBindingSource;
-            this.seccionIdComboBox.DisplayMember = "Descripcion";
-            this.seccionIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.seccionIdComboBox.FormattingEnabled = true;
-            this.seccionIdComboBox.Location = new System.Drawing.Point(79, 160);
-            this.seccionIdComboBox.Name = "seccionIdComboBox";
-            this.seccionIdComboBox.Size = new System.Drawing.Size(200, 21);
-            this.seccionIdComboBox.TabIndex = 14;
-            this.seccionIdComboBox.ValueMember = "Id";
             // 
             // transaccionDetalleBindingSource
             // 
@@ -390,6 +333,33 @@
             this.transaccionDetalleDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.transaccionDetalleDataGridView_CellEndEdit);
             this.transaccionDetalleDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.transaccionDetalleDataGridView_DataError);
             // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaTransaccionesBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(293, 74);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(16, 24);
+            this.activoCheckBox.TabIndex = 17;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(443, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 24);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "ANULADO";
+            this.label1.Visible = false;
+            // 
+            // listaTransaccionesBindingSource
+            // 
+            this.listaTransaccionesBindingSource.DataSource = typeof(BL.Registro.Transaccion);
+            this.listaTransaccionesBindingSource.CurrentChanged += new System.EventHandler(this.listaTransaccionesBindingSource_CurrentChanged);
+            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -414,27 +384,57 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Nota";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // activoCheckBox
+            // listaMateriasBindingSource
             // 
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaTransaccionesBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(263, 69);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(16, 24);
-            this.activoCheckBox.TabIndex = 17;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
+            this.listaMateriasBindingSource.DataSource = typeof(BL.Registro.Materia);
             // 
-            // label1
+            // listaSeccionesBindingSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(443, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 24);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "ANULADO";
-            this.label1.Visible = false;
+            this.listaSeccionesBindingSource.DataSource = typeof(BL.Registro.Seccion);
+            // 
+            // materiaIdLabel
+            // 
+            materiaIdLabel.AutoSize = true;
+            materiaIdLabel.Location = new System.Drawing.Point(12, 143);
+            materiaIdLabel.Name = "materiaIdLabel";
+            materiaIdLabel.Size = new System.Drawing.Size(45, 13);
+            materiaIdLabel.TabIndex = 18;
+            materiaIdLabel.Text = "Materia:";
+            // 
+            // materiaIdComboBox
+            // 
+            this.materiaIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionesBindingSource, "MateriaId", true));
+            this.materiaIdComboBox.DataSource = this.listaMateriasBindingSource;
+            this.materiaIdComboBox.DisplayMember = "Descripcion";
+            this.materiaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materiaIdComboBox.FormattingEnabled = true;
+            this.materiaIdComboBox.Location = new System.Drawing.Point(109, 140);
+            this.materiaIdComboBox.Name = "materiaIdComboBox";
+            this.materiaIdComboBox.Size = new System.Drawing.Size(200, 21);
+            this.materiaIdComboBox.TabIndex = 19;
+            this.materiaIdComboBox.ValueMember = "Id";
+            // 
+            // seccionIdLabel
+            // 
+            seccionIdLabel.AutoSize = true;
+            seccionIdLabel.Location = new System.Drawing.Point(12, 180);
+            seccionIdLabel.Name = "seccionIdLabel";
+            seccionIdLabel.Size = new System.Drawing.Size(49, 13);
+            seccionIdLabel.TabIndex = 19;
+            seccionIdLabel.Text = "Seccion:";
+            // 
+            // seccionIdComboBox
+            // 
+            this.seccionIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionesBindingSource, "SeccionId", true));
+            this.seccionIdComboBox.DataSource = this.listaSeccionesBindingSource;
+            this.seccionIdComboBox.DisplayMember = "Descripcion";
+            this.seccionIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.seccionIdComboBox.FormattingEnabled = true;
+            this.seccionIdComboBox.Location = new System.Drawing.Point(109, 172);
+            this.seccionIdComboBox.Name = "seccionIdComboBox";
+            this.seccionIdComboBox.Size = new System.Drawing.Size(200, 21);
+            this.seccionIdComboBox.TabIndex = 20;
+            this.seccionIdComboBox.ValueMember = "Id";
             // 
             // FormNotas
             // 
@@ -442,34 +442,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(571, 489);
+            this.Controls.Add(seccionIdLabel);
+            this.Controls.Add(this.seccionIdComboBox);
+            this.Controls.Add(materiaIdLabel);
+            this.Controls.Add(this.materiaIdComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(this.transaccionDetalleDataGridView);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.seccionIdComboBox);
-            this.Controls.Add(this.materiaIdComboBox);
             this.Controls.Add(fechaLabel);
             this.Controls.Add(this.fechaDateTimePicker);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
-            this.Controls.Add(materiaIdLabel);
             this.Controls.Add(promedioLabel);
             this.Controls.Add(this.promedioTextBox);
-            this.Controls.Add(seccionIdLabel);
             this.Controls.Add(this.listaTransaccionesBindingNavigator);
             this.Name = "FormNotas";
             this.Text = "Registro de notas";
-            ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionesBindingNavigator)).EndInit();
             this.listaTransaccionesBindingNavigator.ResumeLayout(false);
             this.listaTransaccionesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaMateriasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaSeccionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAlumnosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionDetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionDetalleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaMateriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaSeccionesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,8 +498,6 @@
         private System.Windows.Forms.BindingSource listaMateriasBindingSource;
         private System.Windows.Forms.BindingSource listaSeccionesBindingSource;
         private System.Windows.Forms.BindingSource listaAlumnosBindingSource;
-        private System.Windows.Forms.ComboBox materiaIdComboBox;
-        private System.Windows.Forms.ComboBox seccionIdComboBox;
         private System.Windows.Forms.BindingSource transaccionDetalleBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -509,5 +507,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.CheckBox activoCheckBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox materiaIdComboBox;
+        private System.Windows.Forms.ComboBox seccionIdComboBox;
     }
 }

@@ -173,8 +173,6 @@ namespace BL.Registro
         public int MateriaId { get; set; }
         public int SeccionId { get; set; }
         public BindingList<TransaccionDetalle> TransaccionDetalle { get; set; }
-        public Materia Materia { get; set; }
-        public Seccion Seccion { get; set; }
         public double Promedio { get; set; }
         public bool Activo { get; set; }
 

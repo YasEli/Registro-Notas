@@ -68,6 +68,8 @@
             this.listaCarrerasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carreraIdComboBox = new System.Windows.Forms.ComboBox();
             this.notaTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             anioLabel = new System.Windows.Forms.Label();
@@ -106,7 +108,7 @@
             // anioLabel
             // 
             anioLabel.AutoSize = true;
-            anioLabel.Location = new System.Drawing.Point(12, 247);
+            anioLabel.Location = new System.Drawing.Point(12, 250);
             anioLabel.Name = "anioLabel";
             anioLabel.Size = new System.Drawing.Size(29, 13);
             anioLabel.TabIndex = 9;
@@ -133,7 +135,7 @@
             // seccionIdLabel
             // 
             seccionIdLabel.AutoSize = true;
-            seccionIdLabel.Location = new System.Drawing.Point(12, 192);
+            seccionIdLabel.Location = new System.Drawing.Point(12, 195);
             seccionIdLabel.Name = "seccionIdLabel";
             seccionIdLabel.Size = new System.Drawing.Size(49, 13);
             seccionIdLabel.TabIndex = 16;
@@ -151,7 +153,7 @@
             // notaLabel
             // 
             notaLabel.AutoSize = true;
-            notaLabel.Location = new System.Drawing.Point(12, 225);
+            notaLabel.Location = new System.Drawing.Point(12, 228);
             notaLabel.Name = "notaLabel";
             notaLabel.Size = new System.Drawing.Size(33, 13);
             notaLabel.TabIndex = 18;
@@ -320,7 +322,7 @@
             // anioTextBox
             // 
             this.anioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "Anio", true));
-            this.anioTextBox.Location = new System.Drawing.Point(123, 244);
+            this.anioTextBox.Location = new System.Drawing.Point(123, 247);
             this.anioTextBox.Name = "anioTextBox";
             this.anioTextBox.Size = new System.Drawing.Size(252, 20);
             this.anioTextBox.TabIndex = 4;
@@ -339,7 +341,7 @@
             // 
             this.fotoPictureBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaAlumnosBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.fotoPictureBox.Location = new System.Drawing.Point(415, 50);
+            this.fotoPictureBox.Location = new System.Drawing.Point(441, 103);
             this.fotoPictureBox.Name = "fotoPictureBox";
             this.fotoPictureBox.Size = new System.Drawing.Size(190, 125);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -348,7 +350,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(415, 211);
+            this.button1.Location = new System.Drawing.Point(441, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 27);
             this.button1.TabIndex = 13;
@@ -358,7 +360,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(521, 211);
+            this.button2.Location = new System.Drawing.Point(547, 237);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 27);
             this.button2.TabIndex = 14;
@@ -398,7 +400,7 @@
             this.seccionIdComboBox.DisplayMember = "Descripcion";
             this.seccionIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.seccionIdComboBox.FormattingEnabled = true;
-            this.seccionIdComboBox.Location = new System.Drawing.Point(123, 189);
+            this.seccionIdComboBox.Location = new System.Drawing.Point(123, 192);
             this.seccionIdComboBox.Name = "seccionIdComboBox";
             this.seccionIdComboBox.Size = new System.Drawing.Size(252, 21);
             this.seccionIdComboBox.TabIndex = 17;
@@ -424,17 +426,36 @@
             // notaTextBox
             // 
             this.notaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAlumnosBindingSource, "Nota", true));
-            this.notaTextBox.Location = new System.Drawing.Point(123, 218);
+            this.notaTextBox.Location = new System.Drawing.Point(123, 221);
             this.notaTextBox.Name = "notaTextBox";
             this.notaTextBox.Size = new System.Drawing.Size(252, 20);
             this.notaTextBox.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(415, 50);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(135, 20);
+            this.textBox1.TabIndex = 20;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(556, 48);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(670, 301);
+            this.ClientSize = new System.Drawing.Size(670, 312);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(notaLabel);
             this.Controls.Add(this.notaTextBox);
             this.Controls.Add(carreraIdLabel);
@@ -502,5 +523,7 @@
         private System.Windows.Forms.BindingSource listaCarrerasBindingSource;
         private System.Windows.Forms.ComboBox carreraIdComboBox;
         private System.Windows.Forms.TextBox notaTextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

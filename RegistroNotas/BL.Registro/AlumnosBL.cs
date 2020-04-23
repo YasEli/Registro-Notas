@@ -24,7 +24,18 @@ namespace BL.Registro
         {
             _contexto.Alumnos.Load();
             ListaAlumnos = _contexto.Alumnos.Local.ToBindingList();
+            
             return ListaAlumnos;
+        }
+
+        public BindingList<Alumno> ObtenerAlumnos(string buscar)
+        {
+            var query = _contexto.Alumnos
+                .Where(a => a.Nombre.ToLower().Contains(buscar.ToLower()) == true).ToList();
+
+            var resultado = new BindingList<Alumno>(query);
+
+            return resultado;
         }
 
         public void CancelarCambios()

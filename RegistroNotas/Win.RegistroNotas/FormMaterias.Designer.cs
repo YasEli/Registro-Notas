@@ -49,6 +49,8 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             descripcionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaMateriasBindingNavigator)).BeginInit();
@@ -59,7 +61,7 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(51, 100);
+            descripcionLabel.Location = new System.Drawing.Point(45, 131);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(66, 13);
             descripcionLabel.TabIndex = 1;
@@ -68,7 +70,7 @@
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(51, 74);
+            idLabel.Location = new System.Drawing.Point(45, 105);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
             idLabel.TabIndex = 3;
@@ -101,7 +103,7 @@
             this.listaMateriasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaMateriasBindingNavigator.Name = "listaMateriasBindingNavigator";
             this.listaMateriasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaMateriasBindingNavigator.Size = new System.Drawing.Size(413, 25);
+            this.listaMateriasBindingNavigator.Size = new System.Drawing.Size(590, 25);
             this.listaMateriasBindingNavigator.TabIndex = 0;
             this.listaMateriasBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -219,7 +221,7 @@
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaMateriasBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(123, 97);
+            this.descripcionTextBox.Location = new System.Drawing.Point(117, 128);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(199, 20);
             this.descripcionTextBox.TabIndex = 2;
@@ -227,18 +229,37 @@
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaMateriasBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(123, 71);
+            this.idTextBox.Location = new System.Drawing.Point(117, 102);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(199, 20);
             this.idTextBox.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(492, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(329, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(157, 20);
+            this.textBox1.TabIndex = 6;
             // 
             // FormMaterias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(413, 179);
+            this.ClientSize = new System.Drawing.Size(590, 222);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(descripcionLabel);
             this.Controls.Add(this.descripcionTextBox);
             this.Controls.Add(idLabel);
@@ -274,5 +295,7 @@
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

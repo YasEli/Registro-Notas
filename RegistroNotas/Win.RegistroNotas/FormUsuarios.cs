@@ -97,5 +97,21 @@ namespace Win.RegistroNotas
             _seguridadBL.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var buscar = textBox1.Text;
+
+            if (string.IsNullOrEmpty(buscar) == true)
+            {
+                listaUsuariosBindingSource.DataSource = _seguridadBL.ObtenerUsuarios();
+            }
+            else
+            {
+                listaUsuariosBindingSource.DataSource = _seguridadBL.ObtenerUsuarios(buscar);
+            }
+
+            listaUsuariosBindingSource.ResetBindings(true);
+        }
     }
 }
